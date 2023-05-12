@@ -29,7 +29,7 @@ p.init_index(max_elements = num_elements, ef_construction = 2000, M = 100)
 before = time.time()
 # Element insertion (can be called several times):
 p.add_items(data, data_labels)
-print("import took {}".format(time.time() - before))
+print(f"import took {time.time() - before}")
 
 # Controlling the recall by setting ef:
 p.set_ef(100) # ef should always be > k
@@ -47,4 +47,4 @@ for i, res in enumerate(results):
     if res[0] == truths[i][0]:
         relevant+=1
 
-print("Recall: {}".format(relevant/retrieved))
+print(f"Recall: {relevant / retrieved}")
